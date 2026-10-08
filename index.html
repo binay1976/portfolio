@@ -1,0 +1,2760 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Binay Kumar Shrivastav | Portfolio</title>
+
+<meta name="description"
+      content="Personal Portfolio of Binay Kumar Shrivastav">
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+    --bg: #07111f;
+    --bg-soft: #0b1728;
+    --card: rgba(255,255,255,0.055);
+    --card-hover: rgba(255,255,255,0.09);
+
+    --text: #f8fafc;
+    --muted: #9caec3;
+
+    --primary: #38bdf8;
+    --secondary: #818cf8;
+    --accent: #22d3ee;
+
+    --border: rgba(255,255,255,0.10);
+
+    --radius: 22px;
+
+    --shadow:
+        0 20px 60px rgba(0,0,0,0.25);
+}
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(56,189,248,0.10),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(129,140,248,0.10),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+.container {
+    width: min(1180px, 92%);
+    margin: auto;
+}
+
+/* =========================================================
+   NAVBAR
+========================================================= */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(7,17,31,0.75);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+.nav-inner {
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.logo {
+    font-size: 20px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+.logo span {
+    color: var(--primary);
+}
+.nav-links {
+    display: flex;
+    gap: 28px;
+    list-style: none;
+}
+.nav-links a {
+    color: var(--muted);
+    font-size: 14px;
+    transition: 0.25s ease;
+}
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+.hero {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 2px;
+    align-items: center;
+}
+
+.hero-content {
+    animation: fadeUp 0.9s ease forwards;
+}
+
+.hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 14px;
+    border: 1px solid rgba(56,189,248,0.25);
+    border-radius: 100px;
+    background: rgba(56,189,248,0.08);
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 1.03;
+    letter-spacing: -3px;
+    margin-bottom: 22px;
+}
+
+.hero h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary),
+            var(--secondary)
+        );
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-description {
+    color: var(--muted);
+    font-size: 18px;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    padding: 13px 21px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 700;
+    border: 1px solid var(--border);
+    transition: 0.25s ease;
+}
+
+.btn-primary {
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color: #fff;
+    border: none;
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.04);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* =========================================================
+   PROFILE
+========================================================= */
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-card {
+    width: 310px;
+    padding: 25px;
+    border-radius: 30px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.10),
+            rgba(255,255,255,0.035)
+        );
+
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(20px);
+    animation: float 5s ease-in-out infinite;
+}
+
+.profile-photo {
+    aspect-ratio: .85;
+    border-radius: 24px;
+    object-fit: cover;
+    border: 3px solid rgba(56,189,248,0.30);
+}
+
+.profile-name {
+    text-align: center;
+    font-size: 22px;
+    font-weight: 800;
+    margin-top: 20px;
+}
+
+.profile-role {
+    text-align: center;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+section {
+    padding: 5px 0;
+}
+
+.section-header {
+    margin-bottom: 10px;
+}
+
+.section-label {
+    color: var(--primary);
+    font-size: 18px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+    margin-top: 50px;
+}
+
+.section-title {
+    font-size: clamp(30px, 4vw, 46px);
+    letter-spacing: -1.5px;
+}
+
+.section-description {
+    color: var(--muted);
+    margin-top: 12px;
+    max-width: 1250px;
+}
+
+/* =========================================================
+   ABOUT
+========================================================= */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.info-card {
+    padding: 28px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    transition: 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    background: var(--card-hover);
+}
+
+.info-card h3 {
+    margin-bottom: 18px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+    font-size: 14px;
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+.info-row span:first-child {
+    color: var(--muted);
+}
+.info-row span:last-child {
+    text-align: right;
+}
+
+/* =========================================================
+   EXPERIENCE TIMELINE
+========================================================= */
+
+.timeline {
+    position: relative;
+    max-width: 900px;
+}
+
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background:
+        linear-gradient(
+            var(--primary),
+            transparent
+        );
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 45px;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: 3px;
+    top: 5px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--primary);
+    box-shadow:
+        0 0 0 5px rgba(56,189,248,0.12);
+}
+
+.timeline-date {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.timeline-title {
+    font-size: 21px;
+    font-weight: 800;
+}
+.timeline-company {
+    color: var(--muted);
+    margin-bottom: 12px;
+}
+.timeline-description {
+    color: #b9c6d5;
+}
+
+/* =========================================================
+   AWARDS & ACHIEVEMENTS
+========================================================= */
+
+.awards-wrapper {
+    position: relative;
+    max-width: 1050px;
+    margin: auto;
+}
+
+.awards-wrapper::before {
+    content: "";
+
+    position: absolute;
+
+    left: 25px;
+    top: 10px;
+    bottom: 10px;
+
+    width: 2px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            var(--primary),
+            rgba(56,189,248,0.08)
+        );
+}
+
+.award-item {
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns: 70px 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 22px;
+}
+
+.award-number {
+    position: relative;
+
+    width: 52px;
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary),
+            var(--secondary)
+        );
+
+    color: white;
+
+    font-size: 15px;
+    font-weight: 800;
+
+    border: 5px solid var(--bg);
+
+    box-shadow:
+        0 0 0 1px rgba(56,189,248,0.25),
+        0 8px 25px rgba(0,0,0,0.25);
+
+    z-index: 2;
+}
+
+.award-card {
+    position: relative;
+
+    padding: 24px 26px;
+
+    border-radius: var(--radius);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,0.075),
+            rgba(255,255,255,0.035)
+        );
+
+    border: 1px solid var(--border);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        border-color 0.3s ease;
+
+    overflow: hidden;
+}
+
+.award-card::after {
+    content: "★";
+
+    position: absolute;
+
+    right: 22px;
+    top: 10px;
+
+    font-size: 70px;
+
+    color: rgba(56,189,248,0.035);
+
+    pointer-events: none;
+}
+
+.award-card:hover {
+    transform: translateX(6px);
+
+    background: var(--card-hover);
+
+    border-color:
+        rgba(56,189,248,0.25);
+}
+
+.award-top {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 7px;
+}
+
+.award-title {
+    font-size: 19px;
+
+    font-weight: 800;
+
+    line-height: 1.3;
+}
+
+.award-year {
+    flex-shrink: 0;
+
+    padding: 5px 11px;
+
+    border-radius: 100px;
+
+    background:
+        rgba(56,189,248,0.10);
+
+    border:
+        1px solid rgba(56,189,248,0.18);
+
+    color: var(--primary);
+
+    font-size: 12px;
+
+    font-weight: 800;
+}
+
+.award-given-by {
+    color: var(--muted);
+
+    font-size: 13px;
+
+    margin-bottom: 13px;
+}
+
+.award-given-by strong {
+    color: #dbeafe;
+}
+
+.award-work {
+    color: #cbd5e1;
+
+    font-size: 14px;
+
+    max-width: 850px;
+}
+
+.award-work::before {
+    content: "✦";
+
+    color: var(--primary);
+
+    margin-right: 8px;
+}
+
+
+/* =========================================================
+   AWARD MOBILE
+========================================================= */
+
+@media(max-width: 600px) {
+
+    .awards-wrapper::before {
+        left: 20px;
+    }
+
+    .award-item {
+        grid-template-columns: 50px 1fr;
+
+        gap: 14px;
+    }
+
+    .award-number {
+        width: 42px;
+        height: 42px;
+
+        font-size: 12px;
+
+        border-width: 4px;
+    }
+
+    .award-card {
+        padding: 19px 18px;
+    }
+
+    .award-top {
+        flex-direction: column;
+
+        gap: 9px;
+    }
+
+    .award-title {
+        font-size: 17px;
+    }
+
+    .award-year {
+        align-self: flex-start;
+    }
+
+    .award-work {
+        font-size: 13px;
+    }
+
+}
+
+/* =========================================================
+   EDUCATION
+========================================================= */
+
+.education-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.education-card {
+    padding: 28px;
+
+    border-radius: var(--radius);
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    transition: 0.3s;
+}
+
+.education-card:hover {
+    transform: translateY(-7px);
+}
+
+.edu-icon {
+    font-size: 30px;
+    margin-bottom: 18px;
+}
+
+.education-card h3 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.education-card p {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.skills {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+.skill {
+    padding: 10px 16px;
+
+    border-radius: 100px;
+
+    background: rgba(56,189,248,0.08);
+
+    border: 1px solid rgba(56,189,248,0.15);
+
+    color: #cfefff;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   PROJECTS
+========================================================= */
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 22px;
+}
+
+.project-card {
+    overflow: hidden;
+
+    border-radius: var(--radius);
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: var(--shadow);
+}
+
+.project-image {
+    height: 190px;
+
+    object-fit: cover;
+
+    width: 100%;
+}
+
+.project-content {
+    padding: 22px;
+}
+
+.project-content h3 {
+    margin-bottom: 8px;
+}
+
+.project-content p {
+    color: var(--muted);
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+.project-link {
+    color: var(--primary);
+
+    font-size: 13px;
+
+    font-weight: 700;
+}
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+/* =========================================================
+   GALLERY
+========================================================= */
+
+.gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 12px;
+}
+
+.gallery-item {
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    /* IMPORTANT: remove aspect-ratio: 1 */
+    aspect-ratio: auto;
+
+    transition: 0.3s ease;
+}
+
+.gallery-item:hover {
+    transform: translateY(-4px);
+
+    box-shadow: var(--shadow);
+}
+
+.gallery-item img {
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    height: auto;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+
+/* =========================================================
+   GALLERY CAPTION
+========================================================= */
+
+.gallery-caption {
+
+    width: 100%;
+
+    min-height: 42px;
+
+    padding: 10px 8px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(56,189,248,0.22),
+            rgba(129,140,248,0.22)
+        );
+
+    color: #ffffff;
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    line-height: 1.3;
+
+    border-top:
+        1px solid
+        rgba(255,255,255,0.10);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   MOBILE GALLERY
+========================================================= */
+
+@media(max-width: 900px) {
+
+    .gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+@media(max-width: 500px) {
+
+    .gallery {
+        gap: 8px;
+    }
+
+    .gallery-caption {
+        font-size: 12px;
+
+        min-height: 38px;
+
+        padding: 8px 5px;
+    }
+
+}
+/* =========================================================
+   FAMILY
+========================================================= */
+
+.family-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 18px;
+}
+
+.family-card {
+    text-align: center;
+
+    padding: 25px;
+
+    border-radius: var(--radius);
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+}
+
+.family-card .family-icon {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.family-card h3 {
+    font-size: 17px;
+}
+
+.family-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* =========================================================
+   CONTACT
+========================================================= */
+
+.contact-box {
+    padding: 50px;
+
+    text-align: center;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(56,189,248,0.10),
+            rgba(129,140,248,0.10)
+        );
+
+    border: 1px solid var(--border);
+}
+
+.contact-box h2 {
+    font-size: 35px;
+    margin-bottom: 12px;
+}
+
+.contact-box p {
+    color: var(--muted);
+
+    margin-bottom: 28px;
+}
+
+.contact-buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding: 35px 0;
+
+    border-top: 1px solid var(--border);
+
+    color: var(--muted);
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+.reveal {
+    opacity: 0;
+
+    transform: translateY(30px);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+#topBtn {
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 45px;
+    height: 45px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: rgba(15,23,42,0.85);
+
+    color: white;
+
+    cursor: pointer;
+
+    display: none;
+
+    z-index: 1000;
+}
+
+/* =========================================================
+   ANIMATIONS
+========================================================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width: 900px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 80px 0;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+
+        gap: 28px;
+    }
+
+    .hero-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .profile-container {
+        order: -1;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .education-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .family-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+}
+
+@media(max-width: 500px) {
+
+    section {
+        padding: 70px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .profile-card {
+        width: 260px;
+    }
+
+    .contact-box {
+        padding: 30px 20px;
+    }
+
+    .contact-box h2 {
+        font-size: 27px;
+    }
+
+    .gallery {
+        gap: 8px;
+    }
+
+    .family-grid {
+        gap: 10px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav class="navbar">
+
+    <div class="container nav-inner">
+
+        <a href="#home" class="logo">
+            Binay Kumar Shrivastav<span>.</span>
+        </a>
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#experience">Experience</a>
+            </li>
+
+            <li>
+                <a href="#awards">Awards</a>
+            </li>
+
+            <li>
+                <a href="#education">Education</a>
+            </li>
+
+            <li>
+                <a href="#projects">Projects</a>
+            </li>
+
+            <li>
+                <a href="#gallery">Gallery</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </div>
+
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+<section class="hero" id="home">
+    <div class="container hero-grid">
+        <div class="hero-content">
+            <div class="hero-tag">
+                ● Welcome to my portfolio
+            </div>
+            <h1>
+                Hello, I'm
+                <span>Binay Kumar Shrivastav</span>
+            </h1>
+            <p class="hero-description">
+                Chief Loco Inspector in Western Railway, <br/>
+                Mechanical Engineer, Data Analyst and Application Developer
+                passionate about technology, data visualization,
+                automation and building Automated useful digital solutions.
+            </p>
+            <div class="hero-buttons">
+                <a href="#projects"
+                   class="btn btn-primary">
+                    Explore My Work
+                </a>
+                <a href="#contact"
+                   class="btn btn-secondary">
+                    Contact Me
+                </a>
+            </div>
+        </div>
+
+
+        <div class="profile-container">
+            <div class="profile-card">
+                <!-- CHANGE PHOTO https://drive.google.com/file/d/1ptGkqKJ-NwTI-8JMBi_owqatwv2BAFUi/view?usp=sharing -->
+                <img
+                    src="https://lh3.googleusercontent.com/d/1ptGkqKJ-NwTI-8JMBi_owqatwv2BAFUi"
+                    class="profile-photo"
+                    alt="Binay Kumar">
+                <div class="profile-name">
+                    Binay Kumar Shrivastav
+                </div>
+                <div class="profile-role">
+                    Chief Loco Inspector • Mumbai Division •  Western Railway
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section id="about">
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-label">
+                About Me
+            </div>
+
+            <h2 class="section-title">
+                A little about myself
+            </h2>
+            <h4>⭐ “For me, the real reward is turning ideas into action.”</h4>
+            <p class="section-description">
+                
+                A technology enthusiast with hands-on experience in full-stack development, data analysis, automation, 
+                and dashboard development. 
+                I enjoy transforming ideas into practical digital solutions that simplify processes, improve efficiency, 
+                and turn data into meaningful insights.
+
+                <br><br>
+                Beyond technology, I believe in maintaining a balanced and creative life. 
+                In my personal corner, I enjoy gardening, travelling and exploring new places, 
+                singing, and practising meditation. These interests keep me curious, creative, 
+                and grounded while continuously inspiring me to learn, explore, and grow.
+
+            </p>
+
+        </div>
+
+
+        <div class="about-grid reveal">
+
+            <!-- PERSONAL -->
+
+            <div class="info-card">
+
+                <h3>Personal Information</h3>
+
+                <div class="info-row">
+                    <span>Full Name</span>
+                    <span>Binay Kumar Shrivastav</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Profession</span>
+                    <span>Chief Loco Inspector</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Location</span>
+                    <span>MUMBAI, INDIA</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Email</span>
+                    <span>binaykumarlucky@gmail.com</span>
+                </div>
+
+                <div class="info-row">
+                    <span>Phone</span>
+                    <span>+91-9004473676</span>
+                </div>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="info-card">
+
+                <h3>Connect With Me</h3>
+
+                <div class="info-row">
+                    <span>Email</span>
+
+                    <a href="mailto:binaykumarlucky@gmail.com">
+                        binaykumarlucky@gmail.com
+                    </a>
+                </div>
+
+                <div class="info-row">
+                    <span>Mobile</span>
+
+                    <a href="tel:+919004473676">
+                        +91-9004473676
+                    </a>
+                </div>
+
+                <div class="info-row">
+                    <span>LinkedIn</span>
+
+                    <a href="https://www.linkedin.com/in/binay-kumar-shrivastav-123456789/"
+                       target="_blank">
+                        LinkedIn Profile
+                    </a>
+                </div>
+
+                <div class="info-row">
+                    <span>GitHub</span>
+
+                    <a href="https://github.com/binay1976"
+                       target="_blank">
+                        GitHub Profile
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EXPERIENCE
+===================================================== -->
+
+<section id="experience">
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">
+                Career
+            </div>
+            <h2 class="section-title">
+                Professional Experience
+            </h2>
+        </div>
+
+
+        <div class="timeline reveal">
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">
+                    May 2026 — Present
+                </div>
+                <div class="timeline-title">
+                    Chief Loco Inspector
+                </div>
+                <div class="timeline-company">
+                    Western Railway / Mumbai Division / BCT
+                </div>
+                <p class="timeline-description">
+                    Working as a Full Stack Developer in the IT Cell of Western Railway Headquarters, 
+                    Churchgate, <br/>Developing, maintaining, and deploying web applications, dashboards, databases, 
+                    and digital solutions.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">
+                    2023 — 2026
+                </div>
+                <div class="timeline-title">
+                    Executive (Enterprise Architecture)
+                </div>
+                <div class="timeline-company">
+                    CRIS, New Delhi (UCCC BCT)
+                </div>
+                <p class="timeline-description">
+                    Worked on enterprise architecture initiatives, 
+                    including system design, integration, and optimization 
+                    of IT infrastructure within Indian Railway.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">
+                    2018 — 2023
+                </div>
+                <div class="timeline-title">
+                    Loco Pilot Passenger / Motorman
+                </div>
+                <div class="timeline-company">
+                    Western Railway / Mumbai Division / BDTS & CCG
+                </div>
+                <p class="timeline-description">
+                    Worked as a Loco Pilot Passenger/Motorman, <br/>Driving Train and Mumbai Suburban Trains (Local Trains) within the WR.
+                </p>
+
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">
+                    2012 — 2018
+                </div>
+                <div class="timeline-title">
+                    Loco Pilot Goods
+                </div>
+                <div class="timeline-company">
+                    Western Railway / Mumbai Division / BDTS
+                </div>
+                <p class="timeline-description">
+                    Worked as a Loco Pilot Goods, <br/>Driving Goods Trains within the WR.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">
+                    2009 — 2012
+                </div>
+                <div class="timeline-title">
+                    Sr. Assistant Loco Pilot Goods
+                </div>
+                <div class="timeline-company">
+                    Western Railway / Mumbai Division / BDTS
+                </div>
+                <p class="timeline-description">
+                    Worked as a Sr. ALP, <br/>Assisted Loco Pilots in Driving Mail Express Trains within the WR.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">
+                    2003 — 2009
+                </div>
+                <div class="timeline-title">
+                    Assistant Loco Pilot Goods
+                </div>
+                <div class="timeline-company">
+                    Western Railway / Mumbai Division / BDTS
+                </div>
+                <p class="timeline-description">
+                    Worked as an Assistant Loco Pilot (ALP), <br/>Assisted Loco Pilots in Driving Goods/Passenger Trains within the WR.
+                </p>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-date">
+                    1999 — 2003
+                </div>
+                <div class="timeline-title">
+                    R&D Engineer
+                </div>
+                <div class="timeline-company">
+                    SLEEK International / Borivali / Mumbai
+                </div>
+                <p class="timeline-description">
+                    Worked as an R&D Engineer, <br/>Involved in research and development activities & Automated Production in Modular Kitchen designs.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =====================================================
+     AWARDS & ACHIEVEMENTS
+===================================================== -->
+
+<section id="awards">
+
+    <div class="container">
+        <div class="section-header reveal">
+            <div class="section-label">
+                Recognition
+            </div>
+            <h2 class="section-title">
+                Awards & Achievements
+            </h2>
+            <p class="section-description">
+                recognitions received for professional excellence,
+                innovation, dedication and outstanding contribution.
+            </p>
+        </div>
+
+
+        <div class="awards-wrapper reveal">
+            <!-- ================= AWARD 01 ================= -->
+            <div class="award-item">
+                <div class="award-number">
+                    01
+                </div>
+                <div class="award-card">
+                    <div class="award-top">
+                        <div class="award-title">
+                            Principal Chief Electrical Engineer (PCEE) Award
+                        </div>
+                        <div class="award-year">
+                            2026
+                        </div>
+                    </div>
+                    <div class="award-given-by">
+                        Award Given By: Shri Rajnish Kumar Goyal
+                        <strong>
+                            - PCEE WESTERN RAILWAY
+                        </strong>
+                    </div>
+                    <div class="award-work">
+                        Outstanding contribution towards improving
+                        operational efficiency through innovative solutions like SPM App.
+                    </div>
+                </div>
+            </div>
+            <!-- ================= AWARD 02 ================= -->
+            <div class="award-item">
+                <div class="award-number">
+                    02
+                </div>
+                <div class="award-card">
+                    <div class="award-top">
+                        <div class="award-title">
+                            Divisional Railway Manager (DRM) Award
+                        </div>
+                        <div class="award-year">
+                            2021 & 2022
+                        </div>
+                    </div>
+                    <div class="award-given-by">
+                        Award Given By: Shri GVL Satyakumar
+                        <strong>
+                            - DRM WESTERN RAILWAY
+                        </strong>
+                    </div>
+                    <div class="award-work">
+                        Demonstrated exceptional dedication and delivered
+                        measurable improvements in assigned responsibilities.
+                    </div>
+                </div>
+            </div>
+            <!-- ================= AWARD 03 ================= -->
+            <div class="award-item">
+                <div class="award-number">
+                    03
+                </div>
+                <div class="award-card">
+                    <div class="award-top">
+                        <div class="award-title">
+                            65th Rail Week Annual(GM) Award
+                        </div>
+                        <div class="award-year">
+                            2020
+                        </div>
+                    </div>
+                    <div class="award-given-by">
+                        Award Given By: Shri Alok Kansal
+                        <strong>
+                            - GM WESTERN RAILWAY
+                        </strong>
+                    </div>
+                    <div class="award-work">
+                        Developed Tools for Locao pilots to implement effective solutions that enhanced safety,
+                        accuracy and overall operational performance significantly.
+                    </div>
+                </div>
+            </div>
+            <!-- ================= AWARD 04 ================= -->
+            <div class="award-item">
+                <div class="award-number">
+                    04
+                </div>
+                <div class="award-card">
+                    <div class="award-top">
+                        <div class="award-title">
+                            Divisional Railway Manager (DRM) Award
+                        </div>
+                        <div class="award-year">
+                            2017
+                        </div>
+                    </div>
+                    <div class="award-given-by">
+                        Award Given By: Shri Mukul Jain
+                        <strong>
+                            - DRM WESTERN RAILWAY
+                        </strong>
+                    </div>
+                    <div class="award-work">
+                        Successfully implemented innovative improvements
+                        contributing towards safer and more efficient operations.
+                    </div>
+                </div>
+            </div>
+            <!-- ================= AWARD 05 ================= -->
+            <div class="award-item">
+                <div class="award-number">
+                    05
+                </div>
+                <div class="award-card">
+                    <div class="award-top">
+                        <div class="award-title">
+                            Chief Electrical Engineer (CEE) Award
+                        </div>
+                        <div class="award-year">
+                            2014
+                        </div>
+                    </div>
+                    <div class="award-given-by">
+                        Award Given By: Shri S.K Goyal
+                        <strong>
+                            - CEE WESTERN RAILWAY
+                        </strong>
+                    </div>
+                    <div class="award-work">
+                        Contributed outstanding technical expertise towards
+                        successful completion of important organizational initiatives.
+                    </div>
+                </div>
+            </div>
+            <!-- ================= AWARD 06 ================= -->
+            <div class="award-item">
+                <div class="award-number">
+                    06
+                </div>
+                <div class="award-card">
+                    <div class="award-top">
+                        <div class="award-title">
+                            Divisional Railway Manager (DRM) Award
+                        </div>
+                        <div class="award-year">
+                            2011
+                        </div>
+                    </div>
+                    <div class="award-given-by">
+                        Award Given By: Shri Girish Pillai
+                        <strong>
+                            - DRM WESTERN RAILWAY
+                        </strong>
+                    </div>
+                    <div class="award-work">
+                        Displayed consistent commitment and delivered
+                        high-quality results beyond assigned responsibilities successfully.
+                    </div>
+                </div>
+            </div>
+            <!-- ================= AWARD 07 ================= -->
+            <div class="award-item">
+                <div class="award-number">
+                    07
+                </div>
+                <div class="award-card">
+                    <div class="award-top">
+                        <div class="award-title">
+                            Chief Electrical Engineer (CEE) Award
+                        </div>
+                        <div class="award-year">
+                            2009
+                        </div>
+                    </div>
+                    <div class="award-given-by">
+                        Award Given By: Shri A.K. Malhotra
+                        <strong>
+                            - CEE WESTERN RAILWAY
+                        </strong>
+                    </div>
+                    <div class="award-work">
+                        Introduced practical improvements resulting in
+                        better workflow, reliability and operational effectiveness.
+                    </div>
+                </div>
+            </div>
+            <!-- ================= AWARD 08 ================= -->
+            <div class="award-item">
+                <div class="award-number">
+                    08
+                </div>
+                <div class="award-card">
+                    <div class="award-top">
+                        <div class="award-title">
+                            CORONA WORRIER AWARD
+                        </div>
+                        <div class="award-year">
+                            2020
+                        </div>
+                    </div>
+                    <div class="award-given-by">
+                        Award Given By: Shri GVL Satyakumar
+                        <strong>
+                            - DRM WESTERN RAILWAY
+                        </strong>
+                    </div>
+                    <div class="award-work">
+                        For developing innovative digital solutions during the COVID-19 pandemic, 
+                        enabling efficient information management, operational continuity, remote coordination, 
+                        and timely decision-making despite unprecedented challenges.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= AWARD 09 ================= -->
+
+            <div class="award-item">
+                <div class="award-number">
+                    09
+                </div>
+                <div class="award-card">
+                    <div class="award-top">
+                        <div class="award-title">
+                            Best Power Point Animation Competition (1st Prize)
+                        </div>
+                        <div class="award-year">
+                            2019
+                        </div>
+                    </div>
+
+                    <div class="award-given-by">
+                        Award Given By: Principal,
+                        <strong>
+                            ZETC, Udaipur
+                        </strong>
+                    </div>
+
+                    <div class="award-work">
+                        Achieved notable results through teamwork,
+                        technical knowledge and dedicated professional efforts.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= AWARD 10 ================= -->
+
+            <div class="award-item">
+                <div class="award-number">
+                    10
+                </div>
+                <div class="award-card">
+                    <div class="award-top">
+                        <div class="award-title">
+                            Coming Soon
+                        </div>
+                        <div class="award-year">
+                            20..
+                        </div>
+                    </div>
+
+                    <div class="award-given-by">
+                        Award Given By:
+                        <strong>
+                            WESTERN RAILWAY
+                        </strong>
+                    </div>
+
+                    <div class="award-work">
+                        Recognized for sincere efforts, professional excellence
+                        and valuable contribution towards organizational success.
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     EDUCATION
+===================================================== -->
+
+<section id="education">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-label">
+                Education
+            </div>
+
+            <h2 class="section-title">
+                Educational Qualifications
+            </h2>
+
+        </div>
+
+
+        <div class="education-grid reveal">
+
+
+            <div class="education-card">
+
+                <div class="edu-icon">
+                    🎓
+                </div>
+
+                <h3>
+                    DIPLOMA IN RAIL TRANSPORT & MANAGEMENT
+                </h3>
+
+                <p>
+                    Institute of Rail Transport / New Delhi
+                </p>
+
+                <p>
+                    Year: 2008
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <div class="edu-icon">
+                    📚
+                </div>
+
+                <h3>
+                    DIPLOMA IN PRODUCTION MANAGEMENT
+                </h3>
+
+                <p>
+                    Annamalai University / Distant Education
+                </p>
+
+                <p>
+                    Year: 2001
+                </p>
+
+            </div>
+
+
+            <div class="education-card">
+
+                <div class="edu-icon">
+                    🏆
+                </div>
+
+                <h3>
+                    DIPLOMA IN MECHANICAL ENGINEERING (Production)
+                </h3>
+
+                <p>
+                    Government Polytechnic / GHAZIPUR (U.P)
+                </p>
+
+                <p>
+                    Year: 1999
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     SKILLS
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-label">
+                Expertise
+            </div>
+
+            <h2 class="section-title">
+                Skills & Technologies
+            </h2>
+
+        </div>
+
+
+        <div class="skills reveal">
+
+            <span class="skill">Python</span>
+
+            <span class="skill">Pandas</span>
+
+            <span class="skill">Streamlit</span>
+
+            <span class="skill">PHP</span>
+
+            <span class="skill">MySQL</span>
+
+            <span class="skill">Google Sheets</span>
+
+            <span class="skill">Looker Studio</span>
+
+            <span class="skill">Power BI</span>
+
+            <span class="skill">QlikView</span>
+
+            <span class="skill">Data Analysis</span>
+
+            <span class="skill">Basic Networking</span>
+
+            <span class="skill">Basic Cybersecurity</span>
+
+            <span class="skill">Dashboard Development</span>
+
+            <span class="skill">Web Development</span>
+
+            <span class="skill">Automation</span>
+
+            <span class="skill">Docker</span>
+
+            <span class="skill">Linux</span>
+
+            <span class="skill">Networking</span>
+
+            <span class="skill">AI / ML</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FAMILY
+===================================================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-label">
+                Family
+            </div>
+
+            <h2 class="section-title">
+                My Family
+            </h2>
+
+            <p class="section-description">
+
+                A small introduction to my family.
+
+            </p>
+
+        </div>
+
+
+        <div class="family-grid reveal">
+
+
+            <div class="family-card">
+
+                <div class="family-icon">
+                    👨
+                </div>
+
+                <h3>
+                    Father
+                </h3>
+
+                <p>
+                    Late Shri A.M.Prasad
+                </p>
+
+            </div>
+
+
+            <div class="family-card">
+
+                <div class="family-icon">
+                    👩
+                </div>
+
+                <h3>
+                    Mother
+                </h3>
+
+                <p>
+                    Late Smt. Prabhawati Devi
+                </p>
+
+            </div>
+
+
+            <div class="family-card">
+
+                <div class="family-icon">
+                    💍
+                </div>
+
+                <h3>
+                    Spouse
+                </h3>
+
+                <p>
+                    Rashmita Shrivastav
+                </p>
+
+            </div>
+
+
+            <div class="family-card">
+
+                <div class="family-icon">
+                    👨‍👩‍👧
+                </div>
+
+                <h3>
+                    Son
+                </h3>
+
+                <p>
+                    Shubhankar Shrivastav
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     PROJECTS
+===================================================== -->
+
+<section id="projects">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-label">
+                My Work
+            </div>
+
+            <h2 class="section-title">
+                Websites & Applications
+            </h2>
+
+            <p class="section-description">
+                Some of the applications, dashboards and
+                websites I have developed.
+            </p>
+
+        </div>
+
+
+        <div class="project-grid reveal">
+
+
+            <!-- PROJECT 1 -->
+
+            <div class="project-card">
+
+                <img
+                    src="https://lh3.googleusercontent.com/d/1EqiceopqNjh4mEZQtCnJKsXhalqakWcw"
+                    class="project-image"
+                    alt="Project">
+
+                <div class="project-content">
+
+                    <h3>
+                        SPM Data Analysis App
+                    </h3>
+
+                    <p>
+                        SPM App is designed to analysis, monitoring, and reporting through an 
+                        intuitive web-based interface developed using Python and Streamlit.
+                    </p>
+
+                    <a
+                        href="https://www.youtube.com/watch?v=opZIAGlJd48&t=1372s"
+                        target="_blank"
+                        class="project-link">
+
+                        View Project →
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 2 -->
+
+            <div class="project-card">
+
+                <img
+                    src="https://lh3.googleusercontent.com/d/18A7I7ffS84NOzg6fBPt9gV0Sq5ySQlt3"
+                    class="project-image"
+                    alt="Project">
+
+                <div class="project-content">
+
+                    <h3>
+                        e-TRO Application
+                    </h3>
+
+                    <p>
+                        Data Collection & Analysis for Mumbai Division CLIs, CTCC, Running Rooms, Loco Sheds developed using Python and Streamlit.
+                    </p>
+
+                    <a
+                        href="https://youtu.be/0jg1trPpzq4?si=HkqJ25oJ-ALlus7b"
+                        target="_blank"
+                        class="project-link">
+
+                        View Project →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 3 -->
+
+            <div class="project-card">
+
+                <img
+                    src="https://lh3.googleusercontent.com/d/1k9jj1G78_ddNJXhEi8sghmK_f491Hu6I"
+                    class="project-image"
+                    alt="Project">
+
+                <div class="project-content">
+
+                    <h3>
+                        Yard Simulator
+                    </h3>
+
+                    <p>
+                        Custom web application for
+                        Simulation and interactive visualizing of railway yard layout.
+                    </p>
+
+                    <a
+                        href="https://youtu.be/SYc13-cas40?si=y1tK9QBQQWZHJMQ8"
+                        target="_blank"
+                        class="project-link">
+
+                        View Project →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 4 -->
+
+            <div class="project-card">
+
+                <img
+                    src="https://lh3.googleusercontent.com/d/1j7sRX1djGolJVekwhg3HS68VwMZJyuRQ"
+                    class="project-image"
+                    alt="Project">
+
+                <div class="project-content">
+
+                    <h3>
+                        LRD QUIZ
+                    </h3>
+
+                    <p>
+                        Interactive quiz application for testing knowledge on LRD (Running Department) operations.
+                    </p>
+
+                    <a
+                        href="https://youtu.be/r0y1_sjCNLg?si=nwLbmgZ4QvPHV5L6"
+                        target="_blank"
+                        class="project-link">
+
+                        View Project →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 5 -->
+
+            <div class="project-card">
+
+                <img
+                    src="https://lh3.googleusercontent.com/d/1Eq5awGY9OiZXT0IhCIrLCTTK5i6wrs0y"
+                    class="project-image"
+                    alt="Project">
+
+                <div class="project-content">
+
+                    <h3>
+                        TRO Dashboard
+                    </h3>
+
+                    <p>
+                        Automated reporting and data processing
+                        solution.
+                    </p>
+
+                    <a
+                        href="https://datastudio.google.com/embed/reporting/73effd5a-292b-4eed-91d3-e158cb42d67c/page/f6FAG"
+                        target="_blank"
+                        class="project-link">
+
+                        View Project →
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROJECT 6 -->
+            <div class="project-card">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1-G1Lq-wfD5zv0ufTVP74F_7_qnQt8rMk"
+                    class="project-image"
+                    alt="Project">
+                <div class="project-content">
+                    <h3>
+                        EIG Application Module
+                    </h3>
+                    <p>
+                        Application for managing and analyzing EIG data efficiently.
+                    </p>
+                    <a
+                        href="http://10.3.184.218:5000/"
+                        target="_blank"
+                        class="project-link">
+                        View Project →
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROJECT 7 -->
+            <div class="project-card">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1GgpvxYnHaIa-LEmw3INFL9cDj_EfO6_m"
+                    class="project-image"
+                    alt="Project">
+                <div class="project-content">
+                    <h3>
+                        CLI Tracker Mobile App
+                    </h3>
+                    <p>
+                        CLI Live Location Tracker tool for tracking and managing tasks efficiently.
+                    </p>
+                    <a
+                        href="http://10.3.184.218:5000/"
+                        target="_blank"
+                        class="project-link">
+                        View Project →
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROJECT 8 -->
+            <div class="project-card">
+                <img
+                    src="https://lh3.googleusercontent.com/d/17XEh5PB_m0U3B88lFT_V6W1DjvmehuqN"
+                    class="project-image"
+                    alt="Project">
+                <div class="project-content">
+                    <h3>
+                        DAR Tracker App
+                    </h3>
+                    <p>
+                        DAR Tracker tool for tracking and managing tasks efficiently.
+                    </p>
+                    <a
+                        href="http://10.3.184.218:5200/"
+                        target="_blank"
+                        class="project-link">
+                        View Project →
+                    </a>
+                </div>
+            </div>
+
+            <!-- PROJECT 9 -->
+            <div class="project-card">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1McQW_HisnV95xEE3saKmzGaQuA6sVLne"
+                    class="project-image"
+                    alt="Project">
+                <div class="project-content">
+                    <h3>
+                        Skill Evaluation tool
+                    </h3>
+                    <p>
+                        Skill Evaluation tool for assessing and managing skills efficiently.
+                    </p>
+                    <a
+                        href="http://10.3.184.218:5100/"
+                        target="_blank"
+                        class="project-link">
+                        View Project →
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     GALLERY
+===================================================== -->
+
+<section id="gallery">
+
+    <div class="container">
+
+        <div class="section-header reveal">
+
+            <div class="section-label">
+                Memories
+            </div>
+
+            <h2 class="section-title">
+                Photo Gallery
+            </h2>
+
+        </div>
+
+
+        <div class="gallery reveal">
+
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1_Yc_B9g9BmO63gNFlZf4CrqJLfebU69k"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        Award Ceremony
+                    </div>
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1QKVh28lQOseuKViTZBMndLUFzUVz7CyD"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        With MD CRIS Shri GVL Satyakumar
+                    </div>
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1_yIhc3TYsbaqxx3ceFnSpl5esGERJW4I"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        With DY. CEE LOP, Shri D.K Rathi
+                    </div>
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1gfUBcDcNvvMoJKnEjkPQY2nXSj99fbVV"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        With CEDE Shri Vivek Dixit
+                    </div>
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/14AxFVdOga45GhTEiGBMpwZ9qVnUsCkh7"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        Signal Booklet Release Shri V.K Tripathi
+                    </div>
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1k4eyxTkbjCzoM2BmJQeWVmmFIsSZ4rmN"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        First Day as Motorman
+                    </div>
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1mG1VPk8vziy5uzEKS4_tuMSw6kIU636r"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        DRM BCT Shri Sandeep Sylus
+                    </div>
+            </div>
+
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1m7AG-W79Xgz_bU2jrgus-JEVLv3GWeZb"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        With Sr. DEE(O) BCT Shri Yogesh Antil
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1RXJo0byJkbcvDCpiqxLG6U80mZq50dDY"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        Inauguration of RRMS at BCT
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/14bSD9LPrsBqJXta_J9hi0UNUX7GbNbFv"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        Work With Smile at UCCC/BCT
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1Isw_7bjels351Gs12FZAU8deY8slFGYV"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        Navbharat Times Report on RRMS
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1d80zWSjBCQXIzgAttCwjyF9xlrdZ8gtm"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        DRM BCT Conference Hall
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/17Ay2hnrw8fzuzoMHeKxx1GUPx8FOCpJW"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        With Sr. DEE(O)BCT Shri S.K.D Aggarwal
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1vl8bnN15F8A-gkNEeRHJEe9iH13_nUy5"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        On KBC Set with Amitabh Bachchan
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1HJbN0Qj3m3cMxiv_BL2d_glb4c-mL--F"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        With Sr. DEE(O)BCT Shri Vinod Mehra
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1xzMozOjD6Gaiu_PtuvxssLKQ-1Vzo6xW"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        With CEE(OP) Shri Dinesh Jain
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1i3parBngKyrgih1O0ipKQrDaVxMGPnhD"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        CCLMS Conference New Delhi
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1QPt0J5ZgU8DWYsiCkJj4FIEXO7ytY6Xq"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        With Sr. DEE(O)BCT Shri C.M Singh
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/1xxS5lFbxkraakjuPAEDhyIfoSX0M_fT6"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        With Dr. Ram Verma (Life Coach)
+                    </div>
+            </div>
+            <div class="gallery-item">
+                <img
+                    src="https://lh3.googleusercontent.com/d/157yTW4DBM35JM3U7syHcS2jJCZGLkMIs"
+                    alt="Gallery">
+                    <div class="gallery-caption">
+                        Driving 3 Phase Locomotive
+                    </div>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     CONTACT
+===================================================== -->
+
+<section id="contact">
+
+    <div class="container">
+
+        <div class="contact-box reveal">
+
+            <h2>
+                Let's Connect
+            </h2>
+
+            <p>
+                Feel free to contact me for professional,
+                technical or collaboration related matters.
+            </p>
+
+            <div class="contact-buttons">
+
+                <a
+                    href="mailto:YOUR_EMAIL"
+                    class="btn btn-primary">
+
+                    ✉ Email Me
+
+                </a>
+
+                <a
+                    href="tel:YOUR_PHONE"
+                    class="btn btn-secondary">
+
+                    ☎ Call Me
+
+                </a>
+
+                <a
+                    href="YOUR_LINKEDIN"
+                    target="_blank"
+                    class="btn btn-secondary">
+
+                    LinkedIn
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+    <div class="container">
+
+        © 2026 Binay Kumar Shrivastav.
+        All Rights Reserved.
+
+    </div>
+
+</footer>
+
+
+<!-- BACK TO TOP -->
+
+<button id="topBtn">
+    ↑
+</button>
+
+
+<script>
+
+/* =========================================================
+   SCROLL REVEAL
+========================================================= */
+
+const revealElements =
+    document.querySelectorAll(".reveal");
+
+const observer =
+    new IntersectionObserver(
+        entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+
+                    entry.target.classList.add("visible");
+
+                }
+
+            });
+
+        },
+
+        {
+            threshold: 0.12
+        }
+    );
+
+
+revealElements.forEach(
+    element => observer.observe(element)
+);
+
+
+/* =========================================================
+   BACK TO TOP
+========================================================= */
+
+const topBtn =
+    document.getElementById("topBtn");
+
+window.addEventListener("scroll", () => {
+
+    if (window.scrollY > 500) {
+
+        topBtn.style.display = "block";
+
+    } else {
+
+        topBtn.style.display = "none";
+
+    }
+
+});
+
+
+topBtn.addEventListener("click", () => {
+
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+
+});
+
+</script>
+
+</body>
+</html>
